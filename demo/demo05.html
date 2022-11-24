@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>箭头函数</title>
+</head>
+<body>
+    <script>
+        // 箭头函数
+        // 它也是一种函数的定义，它简化定义仅此而已。
+        // 步骤：1：去掉function  2: 括号后面加箭头。
+        // 无参数的函数
+        //var sum = function(){
+        //}
+        // 箭头改造如下
+        //var sum = ()=>{}
+        // 有参数
+        // 第一种情况  一个参数的如下
+        //var sum2 = function(a){
+        //};
+        // 箭头改造如下
+        var sum2 = (a)=>{};
+        var sum2 = a=>{
+            return a;
+        };
+        // 第二种情况 二个参数的以上,记住括号一定要加
+        //var sum3 = function(a,b){
+        //    return a + b;
+        //};
+        // 箭头改造如下
+        var sum3 = (a,b)=>{
+            return a + b;
+        };
+        // 第三种情况，如果没有逻辑体，只有返回值可以简化如下
+        //var sum4 = function(a,b){
+        //    return a + b;
+        //};
+        // 箭头改造如下
+        var sum4 = (a,b)=>a+b
+        // 执行
+        console.log(sum2(100));
+        console.log(sum3(100,100));
+        console.log(sum4(100,100));
+    </script>
+</body>
+</html>

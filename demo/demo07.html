@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>对象解构</title>
+</head>
+<body>
+    <script>
+        // 对象解构 --- es6提供一些获取快捷获取对象属性和行为方式
+        var person = {
+            name:'zhangsan',
+            age:32,
+            language:"cn",
+            // 函数也有处理
+            /* say:function(){
+                console.log(this.name+"年龄是：" + this.age);
+            }   */
+            /* say:()=>{
+                console.log(this.name+"年龄是：" + this.age);
+            }  */
+            say(){
+                console.log(this.name+"年龄是：" + this.age);
+            } 
+        };
+        // ===========================传统的做法========================
+        var name = person.name;
+        var age = person.age;
+        person.say();
+        // ===========================对象解构做法========================
+        //es6的做法 前提：默认情况name,age必须是jsonkey.
+        var {name,age} = person;
+        console.log(name,age);
+        // 可以用冒号取小名
+        var {name,age,language:lan} = person;
+        console.log(name,age,lan);
+    </script>
+</body>
+</html>

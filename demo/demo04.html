@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>箭头函数</title>
+</head>
+<body>
+    <script>
+        // 箭头函数
+        // 它也是一种函数的定义，它简化定义仅此而已。
+        // 步骤：1：去掉function  2: 括号后面加箭头。
+        // 1:声明式的定义
+        function add (){
+        };
+        // 2:表达式的定义
+        var add2 = function(){
+        }     
+        // 3:箭头函数的定义
+        var sum = (a = 100,b = 300)=>{
+            console.log(a+b);
+        };
+        // 这里执行箭头函数
+        sum(50,50);
+        // 这里执行箭头函数
+        sum();
+        // 这里执行箭头函数
+        sum(400);
+    </script>
+</body>
+</html>

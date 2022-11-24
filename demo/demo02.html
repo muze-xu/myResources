@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>模板字符串</title>
+</head>
+<body>
+    <script>
+        var username = "张三";
+        var age = 30;
+        // 1: 原始的做法就是去拼接字符串
+        var str = "我名字叫 " + username+",年龄是: "+age;
+        console.log(str);  
+        // 2:用模板字符串来拯救 注意：这里是 `（飘键） (tab键盘的上面那个键)
+        // jdk1.9 
+        var str2 = `我名字叫 ${username},年龄是: ${age}`;
+        console.log(str2);
+    </script>
+</body>
+</html>

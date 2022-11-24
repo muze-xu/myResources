@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ES6的语法：传播操作符【...】</title>
+</head>
+<body>
+    <script>
+        // 1： 定义一个对象
+        var person1 = {
+            name: '小飞飞',
+            age: 16,
+        };
+        // 2： 对象解构
+        var {name,age} = person1;
+        // =========================== ... 对象融合=====================
+        var person2 = {
+            ...person1,
+            gender:1,
+            tel:13478900
+        };
+        console.log(person2);
+        // =========================== ... 对象取值=====================
+        // ... 对象取值
+        var person3 = {
+            name:"李四",
+            gender:1,
+            tel:"11111",
+            address:'广州'
+        };
+        // ...person4 把剩下没取走给我。
+        var {name,gender,...person4} = person3;
+        console.log(name)
+        console.log(age)
+        console.log(person4)
+        // =================场景分析 -----伪代码========================
+        // 模拟后台：异步查询返回用户数据 如下：
+        function findUsers(){
+            $.get("xxxxx",function(res){
+                var res = {
+                    pages:11,
+                    pageSize:10,
+                    pageNo:1,
+                    firstFlag:true,
+                    lastFlag:false,
+                    total:123,
+                    data:[{},{},{},{}],
+                };
+                // ==========================对象 ... 取值===============
+                var {data:users,...pagesjon} = res;
+                //等价于
+                /*  var users = res.data;
+                   var pagesjon = {
+                    res = {
+                        pages:11,
+                        pageSize:10,
+                        pageNo:1,
+                        firstFlag:true,
+                        lastFlag:false,
+                        total:123,
+                    }; */
+            })
+        }
+    </script>
+</body>
+</html>
